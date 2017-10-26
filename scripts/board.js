@@ -43,20 +43,6 @@ const startBar = require('./select');
 							.attr('x', d => d.x)
 							.attr('y', d => d.y);
 
-					// 		this.leftDiagonal = this.board
-	   		// 							.append('rect')
-	   		// 							.attr('class', 'row leftDiagonal')
-	   		// 							.attr('width', 100 * n)
-					// 		this.rightDiagonal = this.board
-	   		// 							.append('rect')
-	   		// 							.attr('class', 'row rightDiagonal')
-	   		// 							.attr('width', 100 * n)
-
-					// 		this.row = this.board.append('rect')
-	   		// 		  .attr('y', '0')
-					//    	.attr('width', 100 * n)
-					//    	.attr('class', 'row')
-
 					this.leftDiagonalSpots = this.board.selectAll('.ldSpots');
 	   		}
 

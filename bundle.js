@@ -71,8 +71,8 @@ const countNQueensSolutions = __webpack_require__(1);
 const queens = __webpack_require__(2);
 const leftDiagonalSpots = __webpack_require__(3);
 const rightDiagonalSpots = __webpack_require__(4);
-const infoBoard = __webpack_require__(5);
-const columnSpots = __webpack_require__(6);
+const infoBoard = __webpack_require__(6);
+const columnSpots = __webpack_require__(5);
 const startBar = __webpack_require__(7);
 
 ((global) => {
@@ -111,20 +111,6 @@ const startBar = __webpack_require__(7);
 							.attr('class', 'block')
 							.attr('x', d => d.x)
 							.attr('y', d => d.y);
-
-					// 		this.leftDiagonal = this.board
-	   		// 							.append('rect')
-	   		// 							.attr('class', 'row leftDiagonal')
-	   		// 							.attr('width', 100 * n)
-					// 		this.rightDiagonal = this.board
-	   		// 							.append('rect')
-	   		// 							.attr('class', 'row rightDiagonal')
-	   		// 							.attr('width', 100 * n)
-
-					// 		this.row = this.board.append('rect')
-	   		// 		  .attr('y', '0')
-					//    	.attr('width', 100 * n)
-					//    	.attr('class', 'row')
 
 					this.leftDiagonalSpots = this.board.selectAll('.ldSpots');
 	   		}
@@ -389,25 +375,6 @@ module.exports = function(instruction, nextInstruction, prevInstruction) {
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = function(instruction) {
-  if (instruction.STATUS === "Dead end") {
-    document.getElementById('alert').innerHTML = "Dead end";
-  } else if (instruction.STATUS === "!SOLUTION!") {
-    document.getElementById('alert').innerHTML = "Solution";
-  } else {
-    document.getElementById('alert').innerHTML = "Chilling";
-  }
-
-  document.getElementById('bit').innerHTML = instruction.bit ? instruction.bit.toString(2) : 'pending';
-  document.getElementById('start').innerHTML = instruction.start ? instruction.start : 'pending';
-  document.getElementById('end').innerHTML = instruction.end ? instruction.end : 'pending';
-}
-
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
 // TODO!!!
 // I am working on this!!!
 
@@ -442,6 +409,25 @@ module.exports = function(instruction, nextInstruction, prevInstruction) {
 
 
 /***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+module.exports = function(instruction) {
+  if (instruction.STATUS === "Dead end") {
+    document.getElementById('alert').innerHTML = "Dead end";
+  } else if (instruction.STATUS === "!SOLUTION!") {
+    document.getElementById('alert').innerHTML = "Solution";
+  } else {
+    document.getElementById('alert').innerHTML = "Chilling";
+  }
+
+  document.getElementById('bit').innerHTML = instruction.bit ? instruction.bit.toString(2) : 'pending';
+  document.getElementById('start').innerHTML = instruction.start ? instruction.start : 'pending';
+  document.getElementById('end').innerHTML = instruction.end ? instruction.end : 'pending';
+}
+
+
+/***/ }),
 /* 7 */
 /***/ (function(module, exports) {
 
@@ -450,7 +436,6 @@ module.exports = function() {
   d3.select("#startButton").on('click', () => {
     let boardSize = d3.select("#num").node().value;
     let newGame = new NQueenVis(boardSize);
-    debugger;
     newGame.play();
   });
 }
