@@ -9,20 +9,20 @@ const startBar = require('./select');
 ((global) => {
 
 	document.addEventListener("DOMContentLoaded", function(e) {
-      startBar();
+        startBar();
 
 	   	class NQueenVis {
 	   		constructor(n){
 					this.n = n;
 					this.playBook = countNQueensSolutions(n);
 	   			this.board = d3.select('#board')
-            .html('')
+            		.html('')
 	   				.append('svg')
 	   					.attr('class', 'board')
 	   					.attr('width', 100 * n)
 	   					.attr('height', 100 * n);
 	   			this.queens = [];
-					this.queensOnBoard = this.board.selectAll('.queen');
+				this.queensOnBoard = this.board.selectAll('.queen');
 	   			this.currentLevel = 1;
 	   			this.whites = [];
 					this.stack = [];

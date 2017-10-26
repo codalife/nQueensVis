@@ -1,9 +1,0 @@
-D3
-Breaking up code into modules, separation of concern
-Webpack for module exports
-ES6 syntax, (mention also loosing context when module.exports)
-ES6 classes
-call()
-Interval
-Stack to track backwards
-Pass by reference problem when working with stack. Two times reverse
