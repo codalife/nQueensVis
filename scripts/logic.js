@@ -27,12 +27,12 @@ const countNQueensSolutions = function (n) {
   let count = 0;// eslint-disable-line
   // Checks all possible board configurations
   const innerRecurse = function (ld, col, rd) {
-    // All columns are occupied,
-    // so the solution must be complete
 
     solution.push({ LEVEL: level, start: convertBaseTenToBinary(ld, col, rd) });
 
     if (col === done) {
+    // All columns are occupied,
+    // so the solution must be complete
       solution.push({ STATUS: '!SOLUTION!' });
       count += 1;
       return;
@@ -53,7 +53,6 @@ const countNQueensSolutions = function (n) {
     while (poss & done) {// eslint-disable-line
       const bit = poss & -poss;// eslint-disable-line
       poss -= bit;
-      // solution.push({start: convertBaseTenToBinary(ld, col, rd)});
 
       solution.push({ bit: Math.log2(bit) });
 

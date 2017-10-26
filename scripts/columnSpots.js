@@ -1,6 +1,3 @@
-// TODO!!!
-// I am working on this!!!
-
 module.exports = function (instruction, nextInstruction) {
   this.board.selectAll('.clSpots')
     .data([])
